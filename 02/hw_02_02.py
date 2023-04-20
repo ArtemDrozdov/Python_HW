@@ -4,18 +4,36 @@
 # их отгадать. Для этого Петя делает две подсказки. Он называет сумму этих чисел S и их 
 # произведение P. Помогите Кате отгадать задуманные Петей числа.
 
-summa = int(input(f"Введите сумму чисел S = "))
-mult = int(input(f"Введите произведение чисел P = "))
-flag_break = False
+# summa = int(input(f"Введите сумму чисел S = "))
+# mult = int(input(f"Введите произведение чисел P = "))
+# flag_break = False
 
-for x in range(summa):
-    if(flag_break == False):
-        for y in range(summa):
-            if (x + y == summa) and (x * y == mult):
-                print("загаданные числа:")
-                print(x, y)
-                flag_break = True
-                break
-            elif (x == summa -1) and (y == summa -1):
-                print("нет соответствующих чисел")
+# for x in range(summa):
+#     if(flag_break == False):
+#         for y in range(summa):
+#             if (x + y == summa) and (x * y == mult):
+#                 print("загаданные числа:")
+#                 print(x, y)
+#                 flag_break = True
+#                 break
+#             elif (x == summa -1) and (y == summa -1):
+#                 print("нет соответствующих чисел")
 
+s = int(input('Введите сумму двух чисел, где каждое из чисел <= 1000: '))
+p = int(input('Введите их произведение: '))
+if s > 2000 or s < 0: 
+    print ('Неверно введены данные')
+else:
+    # Вариант 2
+    d = (s**2 - 4*p)**0.5
+    n1 = int(s + d) // 2
+    n2 = int(s - d) // 2
+    print (f'Загаданы числа {n1} и {n2}' if n1*n2 == p else 'Неверно введены данные')
+
+#######################################
+# S = int(input("Input a sum of numbers: "))
+# P = int(input("Input a multiple of numbers: "))
+# x = 1
+# while S - x != P/x:
+#     x += 1
+# print(f"First num is {x}, second num is {S - x}")
