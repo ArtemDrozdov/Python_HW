@@ -54,7 +54,7 @@ scrabble_dict = {
 word_input = input('Введите слово: ')
 word_upper = word_input.upper()
 
-# print(f'NOTEBOOK:', fun('NOTEBOOK'))
+print(f'NOTEBOOK:', fun('NOTEBOOK'))
 # print(f'A:', scrabble_dict.get("A"))
 # # print(f'A:', scrabble_dict["A"]) # KeyError: 'A'
 # print(f'K:', scrabble_dict.get("K"))
@@ -72,10 +72,11 @@ print(sum(map(fun, word_upper)))
 # for k, v in my_dict.items(): # items - массив пар ключ + значение
 #     print(k, v)              # keys - только ключи
 #                              # values - только значения
-# for key in word_upper:
-#     if(key) in scrabble_dict: #.keys():
-#         # print(scrabble_dict[key], end=" ")
-#         print(scrabble_dict.get(key))
+for letter in word_upper:
+    for key in scrabble_dict:
+        if(letter) in key: #.keys():
+            # print(scrabble_dict[key], end=" ")
+            print(scrabble_dict.get(key))
 
 
 # =============================================================================
