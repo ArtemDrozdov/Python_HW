@@ -11,7 +11,7 @@
 # **Вывод:** Парам пам-пам  
 
 def rhythm(str):
-    str = str.split()
+    str = str.lower().split()
     lst = []
     for word in str:
         result = 0
@@ -21,6 +21,7 @@ def rhythm(str):
         lst.append(result)
         # print(lst)
     return len(set(lst)) == 1
+    # return len(lst) == lst.count(list[0])
 
 str = input('Введите: пара-ра-рам рам-пам-папам па-ра-па-дам\n')
 # str = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
@@ -30,3 +31,5 @@ if rhythm(str):
     print('Парам пам-пам')
 else:
     print('Пам парам')
+
+# print(len(set(map(lambda part: len([w for w in part if w in 'аеёиоуыэюя']), song))) == 1)    
